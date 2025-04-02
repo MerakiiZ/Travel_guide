@@ -33,10 +33,14 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-    height: 500vh;
+    height: 900vh;
     color: #000;
 }
 
+.main {
+    position: relative;
+    z-index: 1;
+}
 /* ------------------------------- TEXT STYLES ------------------------------ */
 
 h1 {
@@ -258,9 +262,22 @@ h2 {
 
 /* --------------------------- Destination Section -------------------------- */
 
-.destinaton_section{
-    top: 500vh;
+.destination_section {
+    position: relative; /* Ensure it follows the document flow */
+    margin-top: 150vh; /* Add reasonable spacing from the previous section */
+    text-align: center;
+    /* background-color: #d8a865; */
+    padding: 50px 0; /* Add padding for better spacing inside the section */
 }
+
+.destination_section h1 {
+    font-size: 55px;
+    font-weight: 100;
+    line-height: 1.5;
+    margin: 0; /* Remove unnecessary padding or margins */
+}
+
+/* ---------------------------------- Media --------------------------------- */
 
 
 @media screen and (max-width: 430px) {

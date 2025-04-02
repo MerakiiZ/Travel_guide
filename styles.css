@@ -241,6 +241,13 @@ h2 {
     grid-template-rows: 1fr;
     grid-column-gap: 10px;
     grid-row-gap: 0px;
+
+    justify-content: center; /* Centers the grid horizontally */
+    align-content: center;  /* Centers the grid vertically */
+    align-items: center;    /* Centers items within their grid cells */
+
+    margin: 0 auto;
+    width: 80%;
 }
 
 #about_imageOne {
@@ -280,7 +287,7 @@ h2 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
-    grid-column-gap: 0px;
+    grid-column-gap: 5px;
     grid-row-gap: 0px;
 }
 
@@ -292,7 +299,7 @@ h2 {
 
 .destination_image1 { 
     grid-area: 1 / 1 / 2 / 2; 
-    width: 100%;
+    width: 50%;
 }
 .destination_image2 { 
     grid-area: 1 / 2 / 2 / 3; 

@@ -263,18 +263,42 @@ h2 {
 /* --------------------------- Destination Section -------------------------- */
 
 .destination_section {
-    position: relative; /* Ensure it follows the document flow */
-    margin-top: 150vh; /* Add reasonable spacing from the previous section */
+    position: relative; 
+    margin-top: 130vh; 
     text-align: center;
-    /* background-color: #d8a865; */
-    padding: 50px 0; /* Add padding for better spacing inside the section */
+    padding: 50px 0; 
 }
 
 .destination_section h1 {
     font-size: 55px;
     font-weight: 100;
     line-height: 1.5;
-    margin: 0; /* Remove unnecessary padding or margins */
+    margin: 0; 
+}
+
+.destination_images{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.destination_images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.destination_image1 { 
+    grid-area: 1 / 1 / 2 / 2; 
+    width: 100%;
+}
+.destination_image2 { 
+    grid-area: 1 / 2 / 2 / 3; 
+}
+.destination_image3 { 
+    grid-area: 1 / 3 / 2 / 4; 
 }
 
 /* ---------------------------------- Media --------------------------------- */

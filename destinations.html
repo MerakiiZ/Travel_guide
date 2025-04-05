@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Travel Guide - Destinations</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <img class="header-image" src="images/cover-image.jpg" alt="Cebu">
+        <h1 class="header-title">Cebu</h1>
+        <p class="header-subtitle">The Queen City of the South</p>
+        <hr class="header-divider">
+        <nav class="navbar">
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-container">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="places.html">Destination</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main-destination">
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Bohol Island Tour from Cebu</h1>
+                    <p>Experience the natural wonders of Bohol on this full-day tour from Cebu. Visit the iconic Chocolate Hills, meet the adorable tarsiers, cruise along the Loboc River, and more!</p>
+                </div>
+            </div>
+        </section>
+        <div class="container">
+            <div class="main-content">
+                <div class="content-left">
+                    <div class="activity-card">
+                        <div class="activity-image">
+                            <img src="images/pexels-bongvideos-production-1310991-2524366.jpg" alt="Activity Image 1" class="gallery-image">
+                        </div>
+                        <div class="activity-details">
+                            <h1 class="activity-title">Bohol Island Tour from Cebu</h1>
+                            <div class="highlights">
+                                <h3>Experience Highlights</h3>
+                                <ul>
+                                    <li>Visit the famous Chocolate Hills, Bohol's most iconic attraction</li>
+                                    <li>See the world's smallest primates, the Philippine tarsiers</li>
+                                    <li>Enjoy a buffet lunch on a floating restaurant along the Loboc River</li>
+                                    <li>Explore the historic Baclayon Church</li>
+                                    <li>Convenient round-trip ferry transfers included</li>
+                                </ul>
+                            </div>
+                            <div class="highlights">
+                                <h3>What's Included</h3>
+                                <ul>
+                                    <li>Round-trip ferry tickets</li>
+                                    <li>Air-conditioned vehicle transfers</li>
+                                    <li>English-speaking tour guide</li>
+                                    <li>Buffet lunch at Loboc River</li>
+                                    <li>All entrance fees</li>
+                                </ul>
+                            </div>
+                            <div class="itinerary">
+                                <h3>Itinerary</h3>
+                                <p><strong>5:30 AM</strong> - Pick up from your hotel in Cebu City</p>
+                                <p><strong>6:30 AM</strong> - Ferry departure from Cebu to Bohol</p>
+                                <p><strong>8:00 AM</strong> - Arrival in Bohol, meet your guide</p>
+                                <p><strong>9:00 AM</strong> - Visit the Chocolate Hills</p>
+                                <p><strong>11:00 AM</strong> - Tarsier Conservation Area</p>
+                                <p><strong>12:30 PM</strong> - Loboc River Cruise with Lunch</p>
+                                <p><strong>2:30 PM</strong> - Baclayon Church and Museum</p>
+                                <p><strong>4:00 PM</strong> - Return to Tagbilaran Port</p>
+                                <p><strong>5:00 PM</strong> - Ferry back to Cebu</p>
+                                <p><strong>6:30 PM</strong> - Arrival in Cebu, transfer back to hotel</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-right">
+                    <div class="booking-widget">
+                        <div class="price">₱3,500 <span>per person</span></div>
+                        <div class="date-selector">
+                            <label for="tour-date">Select Date</label>
+                            <input type="date" id="tour-date">
+                        </div>
+                        <div class="participants">
+                            <label for="participants">Participants</label>
+                            <select id="participants">
+                                <option value="1">1 Adult</option>
+                                <option value="2">2 Adults</option>
+                                <option value="3">3 Adults</option>
+                                <option value="4">4 Adults</option>
+                                <option value="5">5 Adults</option>
+                            </select>
+                        </div>
+                        <button class="book-now">Book Now</button>
+                        <div class="info">
+                            <div class="info-item">
+                                <div class="info-icon">⏱️</div>
+                                <div>
+                                    <strong>Duration</strong>
+                                    <p>13 hours (approx.)</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-icon">📅</div>
+                                <div>
+                                    <strong>Cancellation</strong>
+                                    <p>Free cancellation 24 hours before</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-icon">📱</div>
+                                <div>
+                                    <strong>Mobile Ticket</strong>
+                                    <p>Use your phone or print voucher</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Gallery -->
+        <div id="gallery-modal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modal-image">
+            <div id="caption"></div>
+        </div>
+
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h3>About Us</h3>
+                        <ul>
+                            <li><a href="#">Our Story</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Press Center</a></li>
+                            <li><a href="#">Travel Blog</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Help</h3>
+                        <ul>
+                            <li><a href="#">Customer Support</a></li>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">Booking Guide</a></li>
+                            <li><a href="#">Cancellation Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Contact Us</h3>
+                        <ul>
+                            <li><a href="#">Email Us</a></li>
+                            <li><a href="#">Live Chat</a></li>
+                            <li><a href="#">+63 912 345 6789</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <p>© 2023 Island Adventures. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <script>
+        // JavaScript for Modal
+        const modal = document.getElementById("gallery-modal");
+        const modalImg = document.getElementById("modal-image");
+        const captionText = document.getElementById("caption");
+        const images = document.querySelectorAll(".gallery-image");
+        const closeBtn = document.querySelector(".modal .close");
+
+        images.forEach(image => {
+            image.addEventListener("click", () => {
+                modal.style.display = "block";
+                modalImg.src = image.src;
+                captionText.innerHTML = image.alt;
+            });
+        });
+
+        closeBtn.addEventListener("click", () => {
+            modal.style.display = "none";
+        });
+
+        window.addEventListener("click", (event) => {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>

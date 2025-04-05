@@ -1,6 +1,6 @@
 
-    const ADULT_PRICE = 3500;
-    const CHILD_PRICE = 2500;
+    const ADULT_PRICE = 1560;
+    const CHILD_PRICE = 800;
     
     // Get DOM elements
     const adultsSelect = document.getElementById('adults');

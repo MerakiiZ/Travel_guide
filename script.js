@@ -4,3 +4,5 @@ const navbarContainer = document.querySelector('.navbar-container');
 mobileMenu.addEventListener('click', () => {
     navbarContainer.classList.toggle('active');
 });
+
+ 

@@ -84,6 +84,7 @@ strong {
     position: absolute;
     top: 28px;
     right: 157px;
+    z-index: 1000; /* Ensure navbar is above other elements */
 }
 
 .navbar ul {
@@ -137,6 +138,7 @@ strong {
     height: 100%;
     object-fit: cover;
     filter: blur(2px);
+    z-index: -1; /* Ensure header image is below other elements */
 }
 
 .header-title {
@@ -970,6 +972,50 @@ footer {
 
 }
 
+/* Mobile Navbar Styles */
+.navbar-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: #fff;
+}
+
+.navbar-container.active {
+    display: flex;
+    flex-direction: column;
+    background-color: #d8a865;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.navbar-container.active li {
+    margin: 10px 0;
+}
+
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .navbar-container {
+        display: none;
+    }
+}
 
 /* Highlights Modal Styles */
 #highlights-modal {
@@ -1033,7 +1079,7 @@ footer {
     background-color: #fff;
     border-radius: 10px;
     width: 50%;
-    /* text-align: center; */
+    text-align: center;
     color: #333;
     font-family: "Roboto Flex", sans-serif;
 }
@@ -1066,4 +1112,80 @@ footer {
 
 #booking-modal button:hover, #confirmation-modal button:hover {
     background-color: #693115;
+}
+
+
+#destinations_title {
+    margin-top: 110vh;
+    text-align: center;
+    font-size: 100px;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+}
+.destination-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+.destination-card:hover {
+    transform: scale(1.05);
+}
+.destination-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.destination-card-content {
+    padding: 1rem;
+}
+.destination-card-content h3 {
+    margin: 0 0 0.5rem;
+}
+.destination-card-content p {
+    margin: 0;
+    color: #555;
+}
+
+/* Mobile Navbar Styles */
+.navbar-container {
+    display: flex;
+    list-style: none;
+}
+
+.navbar-container.active {
+    display: block;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: #333;
+}
+
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .navbar-container {
+        display: none;
+        flex-direction: column;
+    }
+
+    .navbar-container.active {
+        display: flex;
+    }
 }

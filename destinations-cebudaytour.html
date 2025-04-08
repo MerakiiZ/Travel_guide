@@ -137,7 +137,7 @@
                 </div>
                 <div class="content-right">
                     <div class="booking-widget">
-                        <div class="price">₱3,500 <span>per person</span></div>
+                        <div class="price">₱1,560 <span>per person</span></div>
                         <div class="date-selector">
                             <label for="tour-date">Select Date</label>
                             <input type="date" id="tour-date">
@@ -164,7 +164,7 @@
                         <div class="price-summary">
                             <div class="price-line">
                                 <span>Adults (x<span id="adult-count">1</span>)</span>
-                                <span>₱<span id="adult-total">3500</span></span>
+                                <span>₱<span id="adult-total">1560</span></span>
                             </div>
                             <div class="price-line">
                                 <span>Children (x<span id="child-count">0</span>)</span>
@@ -172,7 +172,7 @@
                             </div>
                             <div class="price-line total">
                                 <span>Total</span>
-                                <span>₱<span id="grand-total">3500</span></span>
+                                <span>₱<span id="grand-total">800</span></span>
                             </div>
                         </div>
                         <button class="book-now">Book Now</button>
@@ -313,8 +313,8 @@
             const date = tourDateInput.value;
             const adults = adultsInput.value;
             const children = childrenInput.value;
-            const adultPrice = 3500;
-            const childPrice = 2000;
+            const adultPrice = 1560;
+            const childPrice = 800;
             const totalPrice = adults * adultPrice + children * childPrice;
 
             if (!date) {
@@ -351,9 +351,62 @@
                 confirmationModal.style.display = "none";
             }
         });
+
+        
+        // COMPUTATION
+        const ADULT_PRICE = 1560;
+        const CHILD_PRICE = 800;
+        
+        // Get DOM elements
+        const adultsSelect = document.getElementById('adults');
+        const childrenSelect = document.getElementById('children');
+        const adultCount = document.getElementById('adult-count');
+        const childCount = document.getElementById('child-count');
+        const adultTotal = document.getElementById('adult-total');
+        const childTotal = document.getElementById('child-total');
+        const grandTotal = document.getElementById('grand-total');
+        
+        // Function to calculate and update prices
+        function updatePrices() {
+            const adults = parseInt(adultsSelect.value);
+            const children = parseInt(childrenSelect.value);
+            
+            // Update counts
+            adultCount.textContent = adults;
+            childCount.textContent = children;
+            
+            // Calculate totals
+            const adultTotalPrice = adults * ADULT_PRICE;
+            const childTotalPrice = children * CHILD_PRICE;
+            const totalPrice = adultTotalPrice + childTotalPrice;
+            
+            // Update displayed prices
+            adultTotal.textContent = adultTotalPrice.toLocaleString();
+            childTotal.textContent = childTotalPrice.toLocaleString();
+            grandTotal.textContent = totalPrice.toLocaleString();
+        }
+        
+        // Add event listeners
+        adultsSelect.addEventListener('change', updatePrices);
+        childrenSelect.addEventListener('change', updatePrices);
+        
+        // Initialize prices
+        updatePrices();
+        
+        // Booking button functionality
+        document.querySelector('.book-now').addEventListener('click', function() {
+            const date = document.getElementById('tour-date').value;
+            const adults = adultsSelect.value;
+            const children = childrenSelect.value;
+            
+            if (!date) {
+                alert('Please select a date for your tour.');
+                return;
+            }
+            
+        });
     </script>
     <script src="script.js"></script>
     <script src="carousel.js"></script>
-    <script src="booking-compute.js"></script>
 </body>
 </html>

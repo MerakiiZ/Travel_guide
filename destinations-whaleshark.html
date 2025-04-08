@@ -56,15 +56,33 @@
                             <div class="highlights">
                                 <h3>What's Included</h3>
                                 <ul>
-                                    <li>✅ Admission to Attractions</li>
-                                    <li>✅ English-speaking professional guide</li>
-                                    <li>✅ Round trip</li>
-                                    <li>❌ Meals and Beverage</li>
+                                    <li>✅ Pick up and drop off hotel in Cebu City / Mactan (we can pick up in other locations with additional surcharge)</li>
+                                    <li>✅ Exclusive Air Conditioned Transportation</li>
+                                    <li>✅ Local facilitator and guide</li>
+                                    <li>✅ Light breakfast upon arrival in Oslob</li>
+                                    <li>✅ Lunch</li>
+                                    <li>✅ Boat ride and life vest</li>
+                                    <li>✅ Snorkeling with the whale sharks for 30 minutes</li>
+                                    <li>✅ Towel</li>
+                                    <li>✅ Cool down at Tumalog Falls (Closed every second Wednesday of the month)</li>
+                                    <li>✅ All entrance fees & snorkeling fees</li>
+                                    <li>✅ Outrigger boat transportation to and from Sumilon island</li>
+                                    <li>✅ Relaxing and snorkeling in Sumilon island sandbar</li>
+                                    <li>❌ Motorbike down to and from Tumalog falls</li>
                                 </ul>
                             </div>
                             <div class="itinerary">
                                 <h3>Itinerary</h3>
-                                <p><strong>Time AM</strong> - Location</p>
+                                <p><strong>4:00 AM</strong> - Pick up hotel</p>
+                                <p><strong>7:00 AM</strong> - Arrival in Oslob, light breakfast</p>
+                                <p><strong>7:30 AM</strong> - Whale shark watching or snorkeling</p>
+                                <p><strong>8:30 AM</strong> -  Cool down at Tumalog Falls (Closed every second Wednesday of the month)</p>
+                                <p><strong>9:30 AM</strong> - Sumilon island sand bar</p>
+                                <p><strong>11:00 AM</strong> - Back to the mainland</p>
+                                <p><strong>12:00 PM</strong> - Lunch</p>
+                                <p><strong>1:00 PM</strong> - Depart back to the hotel</p>
+                                <p><strong>4:00 PM</strong> - Estimated return to hotel</p>
+
                             </div>
                             <div class="terms">
                                 <h3>Terms and Conditions</h3>
@@ -125,7 +143,7 @@
                 </div>
                 <div class="content-right">
                     <div class="booking-widget">
-                        <div class="price">₱3,500 <span>per person</span></div>
+                        <div class="price">₱2,100 <span>per person</span></div>
                         <div class="date-selector">
                             <label for="tour-date">Select Date</label>
                             <input type="date" id="tour-date">
@@ -152,7 +170,7 @@
                         <div class="price-summary">
                             <div class="price-line">
                                 <span>Adults (x<span id="adult-count">1</span>)</span>
-                                <span>₱<span id="adult-total">3500</span></span>
+                                <span>₱<span id="adult-total">2100</span></span>
                             </div>
                             <div class="price-line">
                                 <span>Children (x<span id="child-count">0</span>)</span>
@@ -160,7 +178,7 @@
                             </div>
                             <div class="price-line total">
                                 <span>Total</span>
-                                <span>₱<span id="grand-total">3500</span></span>
+                                <span>₱<span id="grand-total">800</span></span>
                             </div>
                         </div>
                         <button class="book-now">Book Now</button>
@@ -198,7 +216,11 @@
             <div class="modal-content">
                 <h3>Experience Highlights</h3>
                 <ul>
-                    <li>▪️ weee</li>
+                    <li>▪️ Meet and greet with the gentle giants of the sea</li>
+                    <li>▪️ Take a dip in cold waters of Tumalog Falls</li>
+                    <li>▪️ Take your lunch at the amazing cliff views of Cocina En Acantilado</li>
+                    <li>▪️ Swim in the blue waters and relax in the shifting sandbar of Sumilon island </li>
+
                 </ul>
             </div>
         </div>
@@ -292,8 +314,8 @@
             const date = tourDateInput.value;
             const adults = adultsInput.value;
             const children = childrenInput.value;
-            const adultPrice = 3500;
-            const childPrice = 2000;
+            const adultPrice = 2100;
+            const childPrice = 800;
             const totalPrice = adults * adultPrice + children * childPrice;
 
             if (!date) {
@@ -330,9 +352,63 @@
                 confirmationModal.style.display = "none";
             }
         });
+
+        // COMPUTATION
+ 
+        const ADULT_PRICE = 2100;
+        const CHILD_PRICE = 800;
+        
+        // Get DOM elements
+        const adultsSelect = document.getElementById('adults');
+        const childrenSelect = document.getElementById('children');
+        const adultCount = document.getElementById('adult-count');
+        const childCount = document.getElementById('child-count');
+        const adultTotal = document.getElementById('adult-total');
+        const childTotal = document.getElementById('child-total');
+        const grandTotal = document.getElementById('grand-total');
+        
+        // Function to calculate and update prices
+        function updatePrices() {
+            const adults = parseInt(adultsSelect.value);
+            const children = parseInt(childrenSelect.value);
+            
+            // Update counts
+            adultCount.textContent = adults;
+            childCount.textContent = children;
+            
+            // Calculate totals
+            const adultTotalPrice = adults * ADULT_PRICE;
+            const childTotalPrice = children * CHILD_PRICE;
+            const totalPrice = adultTotalPrice + childTotalPrice;
+            
+            // Update displayed prices
+            adultTotal.textContent = adultTotalPrice.toLocaleString();
+            childTotal.textContent = childTotalPrice.toLocaleString();
+            grandTotal.textContent = totalPrice.toLocaleString();
+        }
+        
+        // Add event listeners
+        adultsSelect.addEventListener('change', updatePrices);
+        childrenSelect.addEventListener('change', updatePrices);
+        
+        // Initialize prices
+        updatePrices();
+        
+        // Booking button functionality
+        document.querySelector('.book-now').addEventListener('click', function() {
+            const date = document.getElementById('tour-date').value;
+            const adults = adultsSelect.value;
+            const children = childrenSelect.value;
+            
+            if (!date) {
+                alert('Please select a date for your tour.');
+                return;
+            }
+            
+        });
     </script>
     <script src="script.js"></script>
     <script src="carousel.js"></script>
-    <script src="booking-compute.js"></script>
+    
 </body>
 </html>

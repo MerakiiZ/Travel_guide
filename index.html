@@ -151,6 +151,81 @@
                 </ul>
             </div>
         </section>
+        <section class="section-reviews">
+            <div class="container">
+                <h2 class="section-title">What Our Customers Say</h2>
+                <div class="reviews-wrapper">
+                    <div class="review-card">
+                        <img src="images/profiles/461328931_3878741935779679_8979386084910816979_n.jpg" class="review-image">
+                        <p>"The Cebu Day Tour was amazing! The guides were friendly, and the views were breathtaking."</p>
+                        <h4>- Castro</h4>
+                    </div>
+                    <div class="review-card">
+                        <img src="images/profiles/463738330_8626526314099133_5292688349286538311_n.jpg" class="review-image">
+                        <p>"Plantation Bay was a perfect getaway. The booking process was seamless, and the experience was unforgettable."</p>
+                        <h4>- Matty Lim</h4>
+                    </div>
+                    <div class="review-card">
+                        <img src="images/profiles/470193485_28113744434906002_6335036998711129211_n.jpg" class="review-image">
+                        <p>"Swimming with the whale sharks was a once-in-a-lifetime experience. Highly recommend this tour!"</p>
+                        <h4>- Ally</h4>
+                    </div>
+                    <div class="review-card">
+                        <img src="images/profiles/475183864_603771209249477_3675747925839711208_n.jpg" class="review-image">
+                        <p>"The customer support team was very helpful. They made sure everything went smoothly."</p>
+                        <h4>- Ave</h4>
+                    </div>
+                    <div class="review-card">
+                        <img src="images/profiles/e5f87aa7-3908-4ed7-81d8-99c34a7e2106.jpg" class="review-image">
+                        <p>"The customer support team was very helpful. They made sure everything went smoothly."</p>
+                        <h4>- Princess</h4>
+                    </div>
+                    <div class="review-card">
+                        <img src="images/profiles/Profile_avatar_placeholder_large.png" class="review-image">
+                        <p>"The travel experience was fantastic! Everything was well-organized and stress-free."</p>
+                        <h4>- Mark T.</h4>
+                    </div>
+                    <div class="review-card">
+                        <img src="images/profiles/Profile_avatar_placeholder_large.png" class="review-image">
+                        <p>"The tour packages were well-organized and exceeded my expectations. Highly recommended!"</p>
+                        <h4>- John D.</h4>
+                    </div>
+                    <div class="review-card">
+                        <img src="images/profiles/Profile_avatar_placeholder_large.png" class="review-image">
+                        <p>"The tour was absolutely fantastic! The guides were knowledgeable, and the itinerary was well-planned."</p>
+                        <h4>- Michael T.</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section-features">
+            <div class="container">
+                <h2 class="section-title">Why Choose Us?</h2>
+                <div class="features">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <ion-icon name="pricetag-outline"></ion-icon>
+                        </div>
+                        <h3>Best Price Guarantee</h3>
+                        <p>We offer the best prices for all our tours and activities.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <ion-icon name="headset-outline"></ion-icon>
+                        </div>
+                        <h3>24/7 Customer Support</h3>
+                        <p>Our team is available 24/7 to assist you with your travel needs.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <ion-icon name="calendar-outline"></ion-icon>
+                        </div>
+                        <h3>Easy Booking</h3>
+                        <p>Book your tours and activities easily through our website.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
         <footer>
             <div class="container">
                 <div class="footer-content">
@@ -179,6 +254,58 @@
             </div>
         </footer>
     </div>
-    <script src="script.js"></script>
+    <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('.navbar ul');
+    
+        menuToggle.addEventListener('click', function() {
+                this.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+        });
+            // Auto-scroll reviews carousel with seamless looping
+            const reviewsWrapper = document.querySelector('.reviews-wrapper');
+            const reviewCards = document.querySelectorAll('.review-card');
+            let isScrolling = false;
+        
+            
+            reviewCards.forEach(card => {
+                const clone = card.cloneNode(true);
+                reviewsWrapper.appendChild(clone);
+            });
+    
+        function startAutoScroll() {
+            isScrolling = true;
+            setInterval(() => {
+                if (isScrolling) {
+                    reviewsWrapper.scrollBy({
+                        left: 300, // Scroll by the width of one review card
+                        behavior: 'smooth'
+                    });
+    
+                    // If the end of the original reviews is reached, reset to the start
+                    if (reviewsWrapper.scrollLeft >= reviewsWrapper.scrollWidth / 2) {
+                        reviewsWrapper.scrollTo({
+                            left: 0,
+                            behavior: 'auto' 
+                        });
+                    }
+                }
+            }, 3000); 
+        }
+    
+        function stopAutoScroll() {
+            isScrolling = false;
+        }
+    
+        // Start auto-scroll when the page loads
+        startAutoScroll();
+    
+        // Pause scrolling when the user hovers over the reviews section
+        reviewsWrapper.addEventListener('mouseenter', stopAutoScroll);
+        reviewsWrapper.addEventListener('mouseleave', startAutoScroll);
+    </script>
 </body>
 </html>

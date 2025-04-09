@@ -345,6 +345,11 @@ strong {
     object-fit: cover;
 }
 
+.destination_images img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
 .destination_image1 { 
     grid-area: 1 / 1 / 2 / 2; 
 }
@@ -392,6 +397,7 @@ strong {
     
     
 }
+
 
 
 /* --------------------------- Popular Section Styles --------------------------- */
@@ -1115,6 +1121,12 @@ footer {
 }
 
 
+
+
+/* -------------------------------------------------------------------------- */
+/*                               TOP DESTINATION                              */
+/* -------------------------------------------------------------------------- */
+
 #destinations_title {
     margin-top: 110vh;
     text-align: center;
@@ -1126,6 +1138,7 @@ footer {
     gap: 1rem;
     padding: 1rem;
 }
+
 .destination-card {
     background: white;
     border-radius: 8px;
@@ -1151,6 +1164,64 @@ footer {
     margin: 0;
     color: #555;
 }
+
+/* Ensure consistent card size */
+.destination-card {
+    width: 350px; 
+    height: 400px;
+    overflow: hidden;
+    margin: 10px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+/* Hide cards without collapsing layout */
+.destination-card.hidden {
+    visibility: hidden; 
+    opacity: 0; 
+}
+
+/* --------------------------------- Search --------------------------------- */
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.search-container input[type="text"] {
+    width: 400px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+/* ---------------------------------- Tags ---------------------------------- */
+
+#tag-container {
+    display: flex;
+    margin-top: 20px;
+    font-family: poppins;
+    font-size: 13px;
+}
+
+.tag {
+    padding: 5px 10px;
+    margin: 5px;
+    background-color: #ec874d;
+    border-radius: 15px;
+    transition: 0.5 ease-in-out;
+}
+.tag:hover {
+    background-color: #d8a865;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+
 
 /* Mobile Navbar Styles */
 .navbar-container {
@@ -1189,3 +1260,4 @@ footer {
         display: flex;
     }
 }
+

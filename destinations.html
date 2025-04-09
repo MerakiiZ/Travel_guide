@@ -27,50 +27,243 @@
     </header>
     <div class="main">
         <h1 class="destination-title" id="destinations_title">Top Destinations in Cebu</h1>
+        <h3 class="destination-subtitle" style="margin-left: 20px;">Explore the best tourist attractions in Cebu</h3>
+    <div class="search-container">
+        <input type="text" id="search-bar" placeholder="Search destinations, categories..." onkeyup="filterDestinations()">
+    </div>
     <div class="grid-container">
-        <div class="destination-card">
-            <img src="https://via.placeholder.com/300x200" alt="Magellan's Cross">
+        <div class="destination-card" data-category="historical cultural">
+            <img src="images/destinations/inside-magellancross.jpg" alt="Magellan's Cross">
             <div class="destination-card-content">
                 <h3>Magellan's Cross</h3>
                 <p>A historic landmark symbolizing the arrival of Christianity in the Philippines.</p>
+                <div id="tag-container">
+                    <span class="tag">Historical</span>
+                    <span class="tag">Cultural</span>
+                </div>
             </div>
         </div>
-        <div class="destination-card">
-            <img src="https://via.placeholder.com/300x200" alt="Kawasan Falls">
+        <div class="destination-card" data-category="nature">
+            <img src="images/destinations/kawasan_falls.jpg" alt="Kawasan Falls">
             <div class="destination-card-content">
                 <h3>Kawasan Falls</h3>
                 <p>A stunning multi-tiered waterfall known for its turquoise waters.</p>
+                <div id="tag-container">
+                    <span class="tag">Nature</span>
+                </div>
             </div>
         </div>
-        <div class="destination-card">
-            <img src="https://via.placeholder.com/300x200" alt="Temple of Leah">
+        <div class="destination-card" data-category="cultural">
+            <img src="images/destinations/temple-of-leah-1.webp" alt="Temple of Leah">
             <div class="destination-card-content">
                 <h3>Temple of Leah</h3>
                 <p>A grand Roman-inspired temple built as a symbol of undying love.</p>
+                <div id="tag-container">
+                    <span class="tag">Cultural</span>
+                </div>
             </div>
         </div>
-        <div class="destination-card">
-            <img src="https://via.placeholder.com/300x200" alt="Osmeña Peak">
+        <div class="destination-card" data-category="nature">
+            <img src="images/destinations/146.jpg" alt="Osmeña Peak">
             <div class="destination-card-content">
                 <h3>Osmeña Peak</h3>
                 <p>The highest peak in Cebu offering breathtaking views of the island.</p>
+                <div id="tag-container">
+                    <span class="tag">Nature</span>
+                </div>
             </div>
         </div>
-        <div class="destination-card">
-            <img src="https://via.placeholder.com/300x200" alt="Basilica del Santo Niño">
+        <div class="destination-card" data-category="historical">
+            <img src="images/destinations/basilica-minore-del-santo-nino.jpg" alt="Basilica del Santo Niño">
             <div class="destination-card-content">
                 <h3>Basilica del Santo Niño</h3>
                 <p>The oldest Roman Catholic church in the Philippines.</p>
+                <div id="tag-container">
+                    <span class="tag">Historical</span>
+                    <span class="tag">Cultural</span>
+                </div>
             </div>
         </div>
-        <div class="destination-card">
-            <img src="https://via.placeholder.com/300x200" alt="Oslob Whale Sharks">
+        <div class="destination-card" data-category="nature">
+            <img src="images/destinations/Whale shark/olsob-whale-sharks-watching-tour.webp" alt="Oslob Whale Sharks">
             <div class="destination-card-content">
                 <h3>Oslob Whale Sharks</h3>
                 <p>A unique experience to swim with gentle whale sharks in Oslob.</p>
+                <div id="tag-container">
+                    <span class="tag">Nature</span>
+                </div>
+            </div>
+        </div>
+        <div class="destination-card" data-category="historical">
+            <img src="images/destinations/fort-san-pedro-cebu.jpg" alt="Fort San Pedro">
+            <div class="destination-card-content">
+                <h3>Fort San Pedro</h3>
+                <p>A historic military defense structure built by Spanish settlers in Cebu.</p>
+                <div id="tag-container">
+                    <span class="tag">Historical</span>
+                </div>
+            </div>
+        </div>
+        <div class="destination-card" data-category="cultural">
+            <img src="images/pexels-pongdelrosario-1364557.jpg" alt="Cebu Taoist Temple">
+            <div class="destination-card-content">
+                <h3>Cebu Taoist Temple</h3>
+                <p>A serene temple showcasing Chinese architecture and culture.</p>
+                <div id="tag-container">
+                    <span class="tag">Cultural</span>
+                </div>
+            </div>
+        </div>
+        <div class="destination-card" data-category="nature food">
+            <img src="images/4.jpg" alt="TOPS Cebu">
+            <div class="destination-card-content">
+                <h3>TOPS Cebu</h3>
+                <p>A popular viewpoint offering panoramic views of Cebu City and beyond.</p>
+                <div id="tag-container">
+                    <span class="tag">Nature</span>
+                    <span class="tag">Food</span>
+                </div>
+            </div>
+        </div>
+        <div class="destination-card" data-category="nature">
+            <img src="images/destinations/photo0jpg.jpg" alt="Sirao Garden">
+            <div class="destination-card-content">
+                <h3>Sirao Garden</h3>
+                <p>Known as the "Little Amsterdam" of Cebu, famous for its vibrant flowers.</p>
+                <div id="tag-container">
+                    <span class="tag">Nature</span>
+                </div>
+            </div>
+        </div>
+        <div class="destination-card" data-category="nature">
+            <img src="images/destinations/49c081d97940707692bbc23a1a7b15c4.jpg" alt="Cebu Ocean Park">
+            <div class="destination-card-content">
+                <h3>Cebu Ocean Park</h3>
+                <p>The largest oceanarium in the Philippines, featuring diverse marine life.</p>
+                <div id="tag-container">
+                    <span class="tag">Nature</span>
+                </div>
+            </div>
+        </div>
+        <div class="destination-card" data-category="nature">
+            <img src="images/destinations/27802181329_1e6bd1db93_b.jpg" alt="Cebu Safari">
+            <div class="destination-card-content">
+                <h3>Cebu Safari</h3>
+                <p>A wildlife sanctuary home to exotic animals and lush greenery.</p>
+                <div id="tag-container">
+                    <span class="tag">Nature</span>
+                </div>
+            </div>
+        </div>
+        <div class="destination-card" data-category="historical">
+            <img src="images/destinations/129337-Heritage-Of-Cebu-Monument.jpg" alt="Heritage of Cebu Monument">
+            <div class="destination-card-content">
+                <h3>Heritage of Cebu Monument</h3>
+                <p>A sculptural tableau showcasing Cebu's rich history and cultural heritage.</p>
+                <div id="tag-container">
+                    <span class="tag">Historical</span>
+                </div>
+            </div>
+        </div>
+        <div class="destination-card" data-category="historical">
+            <img src="images/destinations/66bda41ba46dafbaf75d3981_66bf121421139aaae365725d_CGM NEW (1)-poster-00001.jpg" alt="Casa Gorordo Museum">
+            <div class="destination-card-content">
+                <h3>Casa Gorordo Museum</h3>
+                <p>A historic house museum offering a glimpse into 19th-century Cebuano life.</p>
+                <div id="tag-container">
+                    <span class="tag">Historical</span>
+                </div>
+            </div>
+        </div>
+        <div class="destination-card" data-category="cultural food">
+            <img src="images/destinations/2019-01-31.jpg" alt="Sugbo Mercado">
+            <div class="destination-card-content">
+                <h3>Sugbo Mercado</h3>
+                <p>A vibrant food market featuring a variety of local and international cuisines.</p>
+                <div id="tag-container">
+                    <span class="tag">Cultural</span>
+                    <span class="tag">Food</span>
+                </div>
+            </div>
+        </div>
+        <div class="destination-card" data-category="nature waterfalls">
+            <img src="images/destinations/tumalog-falls.jpg" alt="Tumalog Falls">
+            <div class="destination-card-content">
+                <h3>Tumalog Falls</h3>
+                <p>A majestic curtain-like waterfall surrounded by lush greenery.</p>
+                <div id="tag-container">
+                    <span class="tag">Nature</span>
+                    <span class="tag">Waterfalls</span>
+                </div>
+            </div>
+        </div>
+        <div class="destination-card" data-category="nature beaches">
+            <img src="images/destinations/Moalboal-beach-cebu-1-copy-768x512.webp" alt="Moalboal">
+            <div class="destination-card-content">
+                <h3>Moalboal</h3>
+                <p>A coastal town known for its stunning beaches and vibrant marine life.</p>
+                <div id="tag-container">
+                    <span class="tag">Nature</span>
+                    <span class="tag">Beaches</span>
+                </div>
+            </div>
+        </div>
+        <div class="destination-card" data-category="nature beaches">
+            <img src="images/destinations/travelling-to-bantayan-island-3d2n-travel-guide-and-itinerary.jpg" alt="Bantayan Island">
+            <div class="destination-card-content">
+                <h3>Bantayan Island</h3>
+                <p>A tropical paradise with pristine white sand beaches and crystal-clear waters.</p>
+                <div id="tag-container">
+                    <span class="tag">Nature</span>
+                    <span class="tag">Beaches</span>
+                </div>
             </div>
         </div>
     </div>
 </div>
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#about_section">About</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="#section-popular">Tours</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Help</h3>
+                <ul>
+                    <li><a href="#">Customer Support</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Booking Guide</a></li>
+                    <li><a href="#">Cancellation Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2025 Cebu Tours. All rights reserved. (tired na)</p>
+        </div>
+    </div>
+</footer>
+<script>
+    function filterDestinations() {
+        const searchInput = document.getElementById('search-bar').value.toLowerCase();
+        const destinationCards = document.querySelectorAll('.destination-card');
+
+        destinationCards.forEach(card => {
+            const title = card.querySelector('h3').textContent.toLowerCase();
+            const category = card.getAttribute('data-category').toLowerCase();
+
+            if (title.includes(searchInput) || category.includes(searchInput)) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
+        });
+    }
+</script>
 </body>
 </html>

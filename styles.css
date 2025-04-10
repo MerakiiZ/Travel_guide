@@ -346,7 +346,7 @@ strong {
     font-family: "Roboto Flex";
     font-size: 24px;
     font-weight: bold;
-    color: #dd733e;
+    color: #ff9864;
     text-shadow: #000000;
     padding-bottom: 40px;
 }
@@ -1242,12 +1242,6 @@ footer {
     margin: 10px;
     display: inline-block;
     vertical-align: top;
-}
-
-/* Hide cards without collapsing layout */
-.destination-card.hidden {
-    visibility: hidden; 
-    opacity: 0; 
 }
 
 /* --------------------------------- Search --------------------------------- */

@@ -402,37 +402,16 @@
             bookingModal.style.display = "none";
         });
 
-        confirmBookingButton.addEventListener("click", () => {
-            bookingModal.style.display = "none";
-            confirmationModal.style.display = "block";
-        });
-
-        closeConfirmationButton.addEventListener("click", () => {
-            confirmationModal.style.display = "none";
-        });
-
-        window.addEventListener("click", (event) => {
-            if (event.target === bookingModal) {
-                bookingModal.style.display = "none";
-            }
-            if (event.target === confirmationModal) {
-                confirmationModal.style.display = "none";
-            }
-        });
-
-              // Booking Form Modal Logic
+     
+ // Booking Form Modal Logic
 const bookingFormModal = document.getElementById("booking-form-modal");
 const bookingFormClose = document.getElementById("booking-form-close");
+const bookingForm = bookingFormModal.querySelector("form");
 
-// Show the booking form modal after confirmation
+// Show the booking form modal after clicking "Book Now"
 confirmBookingButton.addEventListener("click", () => {
     bookingModal.style.display = "none";
-    confirmationModal.style.display = "block";
-
-    setTimeout(() => {
-        confirmationModal.style.display = "none";
-        bookingFormModal.style.display = "block";
-    }, 2000); // Delay to show the form after confirmation
+    bookingFormModal.style.display = "block";
 });
 
 // Close the booking form modal
@@ -440,10 +419,25 @@ bookingFormClose.addEventListener("click", () => {
     bookingFormModal.style.display = "none";
 });
 
+// Handle booking form submission
+bookingForm.addEventListener("submit", (event) => {
+    event.preventDefault(); // Prevent actual form submission
+    bookingFormModal.style.display = "none";
+    confirmationModal.style.display = "block"; // Show confirmation modal after form submission
+});
+
+// Close the confirmation modal
+closeConfirmationButton.addEventListener("click", () => {
+    confirmationModal.style.display = "none";
+});
+
 // Close the modal when clicking outside of it
 window.addEventListener("click", (event) => {
     if (event.target === bookingFormModal) {
         bookingFormModal.style.display = "none";
+    }
+    if (event.target === confirmationModal) {
+        confirmationModal.style.display = "none";
     }
 });
 

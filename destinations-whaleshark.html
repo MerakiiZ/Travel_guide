@@ -245,6 +245,33 @@
             </div>
         </div>
 
+        <!-- Booking Form Modal -->
+        <div id="booking-form-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="booking-form-close">&times;</span>
+                <h3>Complete Your Booking</h3>
+                <form action="submit-booking.php" method="POST">
+                    <div class="form-group">
+                        <label for="full-name">Full Name</label>
+                        <input type="text" id="full-name" name="full_name" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="special-requests">Special Requests</label>
+                        <textarea id="special-requests" name="special_requests" rows="4" placeholder="Any special requests?"></textarea>
+                    </div>
+                    <button type="submit" class="button">Submit Booking</button>
+                </form>
+            </div>
+        </div>
+
         <footer>
             <div class="container">
                 <div class="footer-content">
@@ -351,6 +378,34 @@
                 confirmationModal.style.display = "none";
             }
         });
+
+                     // Booking Form Modal Logic
+const bookingFormModal = document.getElementById("booking-form-modal");
+const bookingFormClose = document.getElementById("booking-form-close");
+
+// Show the booking form modal after confirmation
+confirmBookingButton.addEventListener("click", () => {
+    bookingModal.style.display = "none";
+    confirmationModal.style.display = "block";
+
+    setTimeout(() => {
+        confirmationModal.style.display = "none";
+        bookingFormModal.style.display = "block";
+    }, 2000); // Delay to show the form after confirmation
+});
+
+// Close the booking form modal
+bookingFormClose.addEventListener("click", () => {
+    bookingFormModal.style.display = "none";
+});
+
+// Close the modal when clicking outside of it
+window.addEventListener("click", (event) => {
+    if (event.target === bookingFormModal) {
+        bookingFormModal.style.display = "none";
+    }
+});
+
 
         // COMPUTATION
  

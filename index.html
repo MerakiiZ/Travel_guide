@@ -27,6 +27,22 @@
             </ul>
         </nav>
     </header>
+    <div class="movieBgWrap">
+        <div class="bgMovieInWrap">
+            <iframe 
+    id="bg-moviewrap player" 
+    class="bg yt-player" 
+    width="100%" 
+    height="100%" 
+    src="https://www.youtube.com/embed/1dFYoNej0M8?autoplay=1&mute=1&controls=0&loop=1&playlist=1dFYoNej0M8&enablejsapi=1"
+    title="YouTube video player" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share" 
+    referrerpolicy="strict-origin-when-cross-origin" 
+    style="width: 1909px; height: 1031px;">
+</iframe>
+        </div>
+    </div>
     <div class="main">
         <section id="about_section" class="about_section">
             <div class="about_description">
@@ -162,7 +178,7 @@
                     </div>
                     <div class="review-card">
                         <img src="images/profiles/463738330_8626526314099133_5292688349286538311_n.jpg" class="review-image">
-                        <p>"Plantation Bay was a perfect getaway. The booking process was seamless, and the experience was unforgettable."</p>
+                        <p>"Princess fell off the boat, 10/10 would try again"</p>
                         <h4>- Matty Lim</h4>
                     </div>
                     <div class="review-card">
@@ -177,7 +193,7 @@
                     </div>
                     <div class="review-card">
                         <img src="images/profiles/e5f87aa7-3908-4ed7-81d8-99c34a7e2106.jpg" class="review-image">
-                        <p>"The customer support team was very helpful. They made sure everything went smoothly."</p>
+                        <p>"The tour packages were well-organized and exceeded my expectations. Highly recommended!"</p>
                         <h4>- Princess</h4>
                     </div>
                     <div class="review-card">
@@ -306,6 +322,45 @@
         // Pause scrolling when the user hovers over the reviews section
         reviewsWrapper.addEventListener('mouseenter', stopAutoScroll);
         reviewsWrapper.addEventListener('mouseleave', startAutoScroll);
+
+        // 2. This code loads the IFrame Player API code asynchronously.
+      var tag = document.createElement('script');
+
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    // 3. This function creates an <iframe> (and YouTube player)
+    //    after the API code downloads.
+    var player;
+    function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+        height: '100%',
+        width: '100%',
+        videoId: 'M7lc1UVf-VE',
+        playerVars: {
+        'playsinline': 1
+        },
+        events: {
+        'onReady': onPlayerReady,
+        'onStateChange': onPlayerStateChange
+        }
+    });
+    }
+    function onPlayerReady(event) {
+    event.target.playVideo(); 
+    setTimeout(loopStart, 100); 
+    }
+
+    function loopStart() {
+        player.seekTo(20, true); 
+    }
+
+    function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.ENDED) {
+            setTimeout(loopStart, 120000)
+        }
+    }
     </script>
-</body>
+    </body>
 </html>
